@@ -1,0 +1,568 @@
+1------------------------------
+ <!DOCTYPE html>
+<html>
+<head>
+<title>calculator</title>
+<style media="screen">
+  table,td,tr{  
+    border:1px solid black; align:center; padding: 10px;}
+</style>
+</head>
+<body>
+<h1 style="color:#307591;text-align:center;">Simple Calculator using Javascript</h1>
+<table>
+<tr>
+<th>Enter 1st number: </th>
+<td><input type="number" name="num1" id="num1"/></td>
+</tr>
+<tr>
+<th>Enter 2nd number: </th>
+<td><input type="number" name="num2" id="num2"/></td>
+</tr>
+<tr>
+<thcolspan="2">
+<input type="button" value="+" onclick="performop(this.value);"/>
+<input type="button" value="-" onclick="performop(this.value);"/>
+<input type="button" value="*" onclick="performop(this.value);"/>
+<input type="button" value="/" onclick="performop(this.value);"/>
+</th>
+</tr>
+<tr>
+<th>Result: </th>
+<td><input type="number" name="res" id="res" readonly/></td>
+</tr>
+</table>
+<script>
+function performop(op){
+var n1=parseInt(document.getElementById("num1").value);
+var n2=parseInt(document.getElementById("num2").value);
+var result=0;
+if(op=="+"){
+result=n1+n2;
+}
+else if(op=="-"){
+result=n1-n2;
+}
+else if(op=="*"){
+result=n1*n2;
+}
+else{
+result=n1/n2;
+}
+document.getElementById("res").value=result;
+}
+</script>
+</body>
+</html>
+
+2----------------------------
+<!DOCTYPE html>
+<html>
+<head>
+<title> JavaScript that calculates the squares and cubes of the numbers from 0 to 10</title>
+</head>
+<body onload="sqrcub() ;">
+<h1 style="text-align: center; color: yellow;"> Squares and Cubes Using JavaScript</h1>
+<hr>
+<div id="tab">
+</div>
+<script>
+function sqrcub()
+{
+var result = "<table border='1' cellpadding='10'><tr><th>SNO</th><th>SQUARE</th><th>CUBE</th></tr>";
+var i,sqr=0,cube=0;
+for(i=0;i<=10;i++)
+{
+sqr = i*i;
+cube = Math.pow(i,3);
+result += "<tr><td>"+i+"</td><td>"+sqr+"</td><td>"+cube+"</td></tr>";
+}
+result += "</table>";
+document.getElementById ("tab").innerHTML = result;
+}
+</script>
+</body>
+</html>
+
+3------------------------
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+p {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+var var1 = setInterval(inTimer, 1000);
+var fs = 5;
+var ids = document.getElementById("demo");
+function inTimer() {
+ids.innerHTML = 'TEXT GROWING';
+ids.setAttribute('style', "font-size: " + fs + "px; color: red");
+fs += 5;
+if(fs >= 50 ){
+clearInterval(var1);
+var var2 = setInterval(deTimer, 1000);
+}
+}
+function deTimer() {
+fs -= 5;
+ids.innerHTML = 'TEXT SHRINKING';
+ids.setAttribute('style', "font-size: " + fs + "px; color: blue");
+if(fs === 5 ){
+clearInterval(var2);
+}
+}
+</script>
+</body>
+</html>
+4------------------------------------
+<!DOCTYPE HTML>
+<html>
+<body>
+<script type="text/javascript">
+var str = prompt("Enter the Input","");
+if(!(isNaN(str)))
+{
+var num,rev=0,remainder;
+num = parseInt(str);
+while(num!=0) {
+remainder = num%10;
+num = parseInt(num/10);
+rev = rev * 10 + remainder;
+}
+alert("Reverse of "+str+" is "+rev);
+}
+else
+{
+str = str.toUpperCase();
+for(var i = 0; i < str.length; i++) {
+var chr = str.charAt(i);
+if(chr == 'A' || chr == 'E' || chr == 'I' || chr == 'O' || chr == 'U')
+break;
+}
+if( i < str.length )
+alert("The position of the left most vowel is "+(i+1));
+else
+alert("No vowel found in the entered string");
+}
+</script>
+</body>
+</html>
+5-------------------------------------------------
+<?xml version="1.0" encoding ="utf-8" ?>
+<?xml-stylesheet type="text/css" href="5.css"?>
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+<h1> STUDENTS DESCRIPTION </h1>
+
+</head>
+<students>
+<student>
+<USN>USN	:  1BI17IS029</USN>
+<name>NAME	:  PREETAM KUMARI</name>
+<college>COLLEGE :  BIT</college>
+<branch>BRANCH	:	Information Science and Engineering</branch>
+<year>YEAR	:	2017</year>
+<e-mail>E-Mail	:	iampritam27@gmail.com</e-mail>
+</student>
+<student>
+<USN>USN	:  1BI17IS030</USN>
+<name>NAME	:  PRIYA NV </name>
+<college>COLLEGE :  BIT</college>
+<branch>BRANCH	:  Information Science and Engineering</branch>
+<year>YEAR	:	2017</year>
+<e-mail>E-Mail	:	priya@gmail.com</e-mail>
+</student>
+<student>
+<USN>USN	:  1BI17IS027</USN>
+<name>NAME	:  POORVIKA N</name>
+<college>COLLEGE :	BIT</college>
+<branch>BRANCH	:  Information Science and Engineering</branch>
+<year>YEAR	:	2017</year>
+<e-mail>E-Mail	:	poorvika@gmail.com</e-mail>	
+</student>
+</students>
+</html>
+6-----------------------------------------
+<?php
+print "<h3> REFRESH PAGE </h3>";
+$name="counter.txt";
+$file = fopen($name,"r");
+$hits= fscanf($file,"%d");
+fclose($file);
+$hits[0]++;
+$file = fopen($name,"w");
+fprintf($file,"%d",$hits[0]);
+fclose($file);
+print "Total Number of Views: ".$hits[0];
+?>
+7------------------------------------------------
+<html>
+<head>
+  <style>
+  body{
+    background-color:black;
+  }
+  p{
+    font-size:40px;
+    color:#fff;
+    text-align:center;
+    position:absolute;
+    top:40%;
+    left:50%;
+  }
+  .pp{
+    font-size:40px;
+    color:#fff;
+    text-align:center;
+    position:absolute;
+    top:50%;
+    left:50%;
+  }
+
+  </style>
+</head>
+
+<p> <?php echo"".date("h:i:s A"); ?> </p>
+<?php date_default_timezone_set('asia/kolkata');?>
+<p class="pp"> <?php echo"".date("h:i:s A"); ?> </p>
+</html>
+8--------------------------------------------------------
+<html>
+
+<head>
+
+<style>
+
+table, td, th
+
+{
+
+border: 1px solid black;
+
+width: 35%;
+
+text-align: center;
+
+background-color: DarkGray;
+
+}
+
+table { margin: auto; }
+
+input,p { text-align:right; }
+
+</style>
+
+</head>
+
+<body>
+
+<form method="post">
+
+<table>
+
+<caption><h2> SIMPLE CALCULATOR </h2></caption>> <tr><td>First Number:</td><td><input type="text" name="num1" /></td>
+
+<td	rowspan="2"><input	type="submit"	name="submit"
+value="calculate"></td></tr>
+
+<tr><td>Second	Number:</td><td><input	type="text"
+name="num2"/></td></tr>
+
+</form>
+
+
+<?php
+
+if(isset($_POST['submit'])) // it checks if the input submit is filled
+{
+
+$num1 = $_POST['num1'];
+
+$num2 = $_POST['num2'];
+
+if(is_numeric($num1)  and is_numeric($num1) )
+
+{
+
+echo "<tr><td> Addition :</td><td><p>".($num1+$num2)."</p></td>";
+
+echo "<tr><td> Subtraction :</td><td><p> ".($num1-$num2)."</p></td>";
+
+echo "<tr><td> Multiplication :</td><td><p>".($num1*$num2)."</p></td>";
+
+echo "<tr><td>Division :</td><td><p> ".($num1/$num2)."</p></td>";
+
+echo "</table>";
+
+}
+
+else
+
+{
+
+echo"<script type='text/javascript' > alert(' ENTER VALID NUMBER');</script>";
+
+}
+
+
+}
+
+?>
+
+</body>
+
+</html>
+
+8b---------------------
+<?php
+
+$a = array(array(1,2,3),array(4,5,6),array(7,8,9));
+
+$b = array(array(7,8,9),array(4,5,6),array(1,2,3));
+
+
+$m=count($a);
+
+$n=count($a[2]);
+
+$p=count($b);
+
+$q=count($b[2]);
+
+
+echo "the first matrix	:"."<br/>";
+
+for ($row = 0; $row < $m; $row++) {
+
+for ($col = 0; $col < $n; $col++)
+
+echo " ".$a[$row][$col];
+
+echo "<br/>";
+
+}
+
+
+echo "the second matrix	:"."<br/>";
+
+for ($row = 0; $row < $p; $row++) {
+
+for ($col = 0; $col < $q; $col++)
+
+echo " ".$b[$row][$col];
+
+echo "<br/>";
+
+}
+
+
+echo "the transpose for the first matrix is:"."<br/>"; for ($row = 0; $row < $m; $row++) {
+
+for ($col = 0; $col < $n; $col++)
+
+echo " ".$a[$col][$row];
+
+echo "<br/>";
+
+}
+if(($m===$p) and ($n===$q)) {
+
+echo "the addition of matrices is:"."<br/>";
+
+for ($row = 0; $row < 3; $row++) {
+
+for ($col = 0; $col < 3; $col++)
+
+echo " ".$a[$row][$col]+$b[$row][$col]." "; echo "<br/>";
+
+}
+
+}
+
+
+if($n===$p){
+
+echo " The multiplication of matrices: <br/>";
+
+$result=array();
+
+for ($i=0; $i < $m; $i++) {
+
+for($j=0; $j < $q; $j++){
+
+$result[$i][$j] = 0;
+
+for($k=0; $k < $n; $k++)
+
+$result[$i][$j] += $a[$i][$k] * $b[$k][$j];
+
+}
+
+}
+
+for ($row = 0; $row < $m; $row++) {
+
+for ($col = 0; $col < $q; $col++)
+
+echo " ".$result[$row][$col];
+
+echo "<br/>";
+
+}
+
+}
+
+?>
+
+
+9-----------------------------------------------
+<?php
+$states = "Mississippi Alabama Texas Massachusetts Kansas";
+$statesArray = [];
+$states1 = explode(' ',$states);
+echo "Original Array :<br>";
+foreach ( $states1 as $i => $value )
+print("STATES[$i]=$value<br>");
+
+foreach($states1 as $state)  {
+if(preg_match( '/xas$/', ($state)))
+$statesArray[0] = ($state);
+}
+foreach($states1 as $state) {
+if(preg_match('/^k.*s$/i', ($state)))
+$statesArray[1] = ($state);
+}
+foreach($states1 as $state) {
+if(preg_match('/^M.*s$/', ($state)))
+$statesArray[2] = ($state);
+}
+foreach($states1 as $state){
+if(preg_match('/a$/', ($state)))
+$statesArray[3] = ($state);
+}
+
+echo "<br><br>Resultant Array :<br>";
+foreach ( $statesArray as $array => $value )
+print("STATES[$array]=$value<br>");
+?>
+10-----------------------------------------------
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<style>
+table, td, th
+{
+border: 1px solid black;
+width: 33%;
+text-align: center;
+border-collapse:collapse;
+background-color:lightblue;
+}
+table { margin: auto; }
+</style>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = null;
+$dbname = "weblab";
+$a=[];
+// Create connection
+// Opens a new connection to the MySQL server
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection and return an error description from the last
+// connection error, if any
+if ($conn->connect_error)
+die("Connection failed: " . $conn->connect_error);
+$sql = "SELECT * FROM student";
+ // <!-- performs a query against the database -->
+ $result = $conn->query($sql);
+echo "<br>";
+echo "<center> BEFORE SORTING </center>";
+echo "<table border='2'>";
+echo "<tr>";
+echo "<th>USN</th><th>NAME</th><th>Address</th></tr>";
+if ($result->num_rows> 0)
+{
+while($row = $result->fetch_assoc())
+{
+echo "<tr>";
+echo "<td>". $row["usn"]."</td>";
+echo "<td>". $row["name"]."</td>";
+echo "<td>". $row["address"]."</td></tr>";
+array_push($a,$row["usn"]);
+}
+}
+else
+echo "Table is Empty";
+echo "</table>";
+$n=count($a);
+$b=$a;
+for ( $i = 0 ; $i< ($n - 1) ; $i++ )
+{
+$pos= $i;
+for ( $j = $i + 1 ; $j < $n ; $j++ )
+{
+if ( $a[$pos] > $a[$j] )
+$pos= $j;
+}
+if ( $pos!= $i )
+{
+$temp=$a[$i];
+$a[$i] = $a[$pos];
+$a[$pos] = $temp;
+}
+}
+$c=[];
+$d=[];
+$result = $conn->query($sql);
+if ($result->num_rows> 0)// output data of each row
+{
+while($row = $result->fetch_assoc())
+{
+for($i=0;$i<$n;$i++)
+{
+if($row["usn"]== $a[$i])
+{
+$c[$i]=$row["name"];
+$d[$i]=$row["address"];
+}
+}
+}
+}
+echo "<br>";
+echo "<center> AFTER SORTING <center>";
+echo "<table border='2'>";
+echo "<tr>";
+echo "<th>USN</th><th>NAME</th><th>Address</th></tr>";
+for($i=0;$i<$n;$i++)
+{
+echo "<tr>";
+echo "<td>". $a[$i]."</td>";
+echo "<td>". $c[$i]."</td>";
+echo "<td>". $d[$i]."</td></tr>";
+}
+echo "</table>";
+$conn->close();
+?>
+</body>
+</html>
+
+
